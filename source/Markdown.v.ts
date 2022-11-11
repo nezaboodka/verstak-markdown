@@ -5,11 +5,11 @@
 // By contributing, you agree that your contributions will be
 // automatically licensed under the license referred above.
 
-import { Block } from "verstak"
-import * as markdown from "markdown-it"
+import { HtmlText } from "verstak"
+import Md from "markdown-it"
 import * as prism from "prismjs"
 
-const md = new markdown.default({
+const md = new Md({
   html: true,
   highlight: (str: string, lang: string, attrs: string) => {
     const highlighted = prism.highlight(str, prism.languages[lang], lang)
@@ -18,9 +18,5 @@ const md = new markdown.default({
 })
 
 export function Markdown(name: string, content: string) {
-  return Block(name, {
-    render(e) {
-      e.innerHTML = md.render(content)
-    },
-  })
+  return HtmlText(md.render(content))
 }
