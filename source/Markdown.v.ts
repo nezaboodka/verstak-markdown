@@ -18,5 +18,5 @@ const md = new Md({
 })
 
 export function Markdown(name: string, content: string) {
-  return HtmlText(md.render(content))
+  return HtmlText(md.render(content), name, { wrapping: true })
 }
