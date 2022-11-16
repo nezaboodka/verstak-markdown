@@ -17,8 +17,8 @@ const md = new Md({
   },
 })
 
-export function Markdown(name: string, content: string) {
-  return HtmlText(md.render(content), name, {
+export function Markdown(content: string) {
+  return HtmlText(md.render(content), {
     initialize(b) {
       b.contentWrapping = true
     },
