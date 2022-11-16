@@ -20,7 +20,7 @@ const md = new Md({
 export function Markdown(name: string, content: string) {
   return HtmlText(md.render(content), name, {
     initialize(b) {
-      b.wrapContent = true
+      b.contentWrapping = true
     },
   })
 }
