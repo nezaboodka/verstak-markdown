@@ -21,6 +21,7 @@ export function Markdown(content: string) {
   return HtmlText(md.render(content), {
     initialize(b) {
       b.contentWrapping = true
+      b.native.setAttribute("markdown", "true")
     },
   })
 }
