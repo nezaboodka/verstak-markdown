@@ -9,14 +9,6 @@ import { HtmlText } from "verstak"
 import Md from "markdown-it"
 import * as prism from "prismjs"
 
-const md = new Md({
-  html: true,
-  highlight: (str: string, lang: string, attrs: string) => {
-    const highlighted = prism.highlight(str, prism.languages[lang], lang)
-    return `<pre class="language-${lang}"><code>${highlighted}</code></pre>`
-  },
-})
-
 export function Markdown(content: string) {
   return HtmlText(md.render(content), {
     initialize(b) {
@@ -25,3 +17,11 @@ export function Markdown(content: string) {
     },
   })
 }
+
+const md = new Md({
+  html: true,
+  highlight: (str: string, lang: string, attrs: string) => {
+    const highlighted = prism.highlight(str, prism.languages[lang], lang)
+    return `<pre class="language-${lang}"><code>${highlighted}</code></pre>`
+  },
+})
