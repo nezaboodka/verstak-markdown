@@ -10,12 +10,15 @@ import Md from "markdown-it"
 import * as prism from "prismjs"
 
 export function Markdown(content: string) {
-  return HtmlText(md.render(content), {
-    initialize(b) {
-      b.contentWrapping = true
-      b.native.setAttribute("markdown", "true")
-    },
-  })
+  return (
+    HtmlText(md.render(content), {
+      initialize(b, base) {
+        b.contentWrapping = true
+        b.native.setAttribute("markdown", "true")
+        base()
+      },
+    })
+  )
 }
 
 const md = new Md({
