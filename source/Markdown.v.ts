@@ -5,13 +5,13 @@
 // By contributing, you agree that your contributions will be
 // automatically licensed under the license referred above.
 
-import { HtmlNote } from "verstak"
+import { VHtmlNote } from "verstak"
 import Md from "markdown-it"
 import * as prism from "prismjs"
 
 export function Markdown(content: string) {
   return (
-    HtmlNote(md.render(content), {
+    VHtmlNote(md.render(content), {
       initialize(b, base) {
         b.contentWrapping = true
         b.native.setAttribute("markdown", "true")
