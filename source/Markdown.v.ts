@@ -14,7 +14,7 @@ export function Markdown(content: string) {
     HtmlNote(md.render(content), {
       initialize(b, base) {
         b.contentWrapping = true
-        b.native.setAttribute("markdown", "true")
+        // b.native.setAttribute("markdown", "true")
         base()
       },
     })
