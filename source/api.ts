@@ -5,4 +5,4 @@
 // By contributing, you agree that your contributions will be
 // automatically licensed under the license referred above.
 
-export * from "./Markdown.v"
+export * from "./Markdown.v.js"
